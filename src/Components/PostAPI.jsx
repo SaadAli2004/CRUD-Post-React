@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import Post from "./Post";
 import Input from "./Input";
 
 export const UserContext = createContext();
@@ -10,6 +9,8 @@ function PostAPI() {
   const [img, setImg] = useState("");
   const [desc, setDesc] = useState("");
   const [posts, setPosts] = useState([]);
+    const [updatePost, setUpdatePost] = useState([]);
+
   return (
     <UserContext.Provider
       value={{
@@ -18,10 +19,12 @@ function PostAPI() {
         img,
         desc,
         posts,
+        updatePost,
         setUser,
         setImg,
         setDesc,
         setPosts,
+        setUpdatePost
       }}
     >
       <Input />
