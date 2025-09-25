@@ -90,7 +90,7 @@ function Input() {
             className="bg-neutral-950 border border-purple-800 rounded-md p-2"
           />
           <div className="m-10 h-80 flex justify-center bg-gray-950 rounded-md max-sm:m-4">
-          <img src= {img} alt="Image" className="object-cover w-full" />
+          <img src= {img} className="object-cover w-full" />
           </div>
           <label htmlFor="desc"className="font-bold">Enter Post Description</label>
 
