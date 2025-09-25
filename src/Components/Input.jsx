@@ -17,6 +17,7 @@ function Input() {
     setPosts,
   } = useContext(UserContext);
 
+
   const [loading, setLoading] = useState(false);
   const inputHandler = (e) => {
     setUser(e.target.value);
@@ -53,7 +54,9 @@ function Input() {
   useEffect(() => {
     const getUrl = async () => {
       const url = await axios.get(baseURL);
+      setPosts(url.data)
     };
+    
     getUrl();
   }, []);
 
@@ -119,11 +122,19 @@ function Input() {
         </div>
       ) : (
         
-        
-        <div className="flex flex-wrap justify-center gap-8 max-sm:flex-col md:gap-4 sm:flex sm:flex-col md:flex-row sm:gap-2">
+        posts.length === 0 ? (
+          <div>
+            <h1 className=" pb-10 text-center max-sm:text-lg sm:text-xl md:text-3xl text-white">There's nothing posted yet!</h1>
+          </div>
+        ) : (
 
-          <Post />
-        </div>
+          <div className="flex flex-wrap justify-center gap-8 max-sm:flex-col md:gap-4 sm:flex sm:flex-col md:flex-row sm:gap-2">
+  
+            <Post />
+          </div>
+        )
+
+        
       )}
     </>
   );
