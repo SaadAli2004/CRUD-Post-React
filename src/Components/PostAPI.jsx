@@ -27,7 +27,10 @@ function PostAPI() {
         setUpdatePost
       }}
     >
+      <div>
       <Input />
+
+      </div>
     </UserContext.Provider>
   );
 }
